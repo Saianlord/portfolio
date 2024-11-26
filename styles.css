@@ -3,14 +3,14 @@
 }
 
 section {
-    opacity: 0; /* Inicia con las secciones ocultas */
-    transform: translateY(50px); /* Efecto de desplazamiento hacia abajo */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición suave */
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
 }
 
 section.visible {
-    opacity: 1; /* Se hace visible */
-    transform: translateY(0); /* Vuelve a su posición original */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 .no-scroll {
@@ -32,6 +32,7 @@ body {
         'footer';
     grid-template-rows: auto 1fr auto auto auto;
     font-family: sans-serif;
+    overflow-x: hidden;
 
 }
 
@@ -129,37 +130,23 @@ h2 {
 }
 
 .img-container {
-    margin: 20px 0 20px 0;
+    margin: 20px 0;
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;  
 }
 
-#brunos-container{
-    width: 65%;
-    height: 450px;
-    max-width: 730px;
-}
-#clinica-container{
-    width: 50%;
-    height: 450px;
-    max-width: 600px;
-}
-#sl-container{
-    width: 65%;
-    height: 300px;
-    max-width: 730px;
-}
-
-#atm-container{
-    width: 50%;
-    height: 750px;
-    max-width: 730px;
+#brunos-container, #clinica-container, #sl-container, #atm-container {
+    width: 90%;  
+    height: auto;
+    max-width: 750px; 
+    margin: 0 auto; 
 }
 
 .img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+    width: 100%;  
+    height: auto; 
+    object-fit: cover;
 }
 
 
@@ -171,23 +158,29 @@ h2 {
     align-items: center;
     margin-bottom: 20px;
 }
+.tech-list {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    max-width: 100%;
+    width: 55%;
+    padding: 10px;
+    list-style: none;
+}
 
+.tech-list li {
+    flex: 1 1 30%;
+    text-align: center;
+    margin: 5px;
+    white-space: nowrap;
+}
 .description-text{
-    width: 70%;
+    width: 80%;
     font-size: 18px;
     display: flex;
     flex-wrap: wrap;
     line-height: 2;
-    justify-content: center;
-}
-
-.tech-list {
-    display: flex;
-    max-width: 100%; 
-    width: 55%; 
-    padding: 10px; 
-    list-style: none; 
-    
+    text-align: justify;
 }
 
 .tech-list li {
@@ -196,13 +189,13 @@ h2 {
     padding: 5px 10px;
     border-radius: 4px;
     font-size: 18px;
-
 }
 
 
 .btn-card {
     margin-top: 20px;
     width: 20%;
+    min-width: 150px; 
     border-radius: 20px;
     padding: 20px;
     border: solid white;
@@ -224,28 +217,41 @@ h2 {
     min-height: 300px;
     padding: 50px 30px 100px 30px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .bio-container .img-container {
-    min-width: 400px;
-    min-height: 400px;
-    margin-left: 20px;
+    min-width: 250px; 
+    max-width: 400px; 
+    margin-left: 5%; 
+    margin-right: 5%; 
+    margin-bottom: 20px; 
+}
+
+.bio-container .img-container img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 50%; 
 }
 
 .intro-container {
-    margin: 0 30px 0 50px; 
-    font-size: 18px; 
-    line-height: 1.6; 
-    max-width: 600px; 
-    text-align: justify; 
+    margin: 0 30px 0 50px;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: justify;
+    flex: 1;
 }
 
 .intro-container p {
     margin-bottom: 60px;
 }
+
 .tag {
     display: inline-block;
-    background-color: #ffffff; 
+    background-color: #ffffff;
     color: #000000;
     font-size: 16px;
     padding: 2px 10px;
@@ -280,6 +286,12 @@ h2 {
     gap: 10px;
     margin: 30px 0 10px 0;
     width: 100%;
+}
+
+.form-item label, input, button{
+    text-align: center;
+    min-width: 160px;
+    width: 50%;
 }
 
 label {
@@ -342,16 +354,36 @@ footer {
 
 
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .bio-container {
-        flex-wrap: wrap;
+        flex-direction: column; 
+        align-items: center; 
+        padding: 20px; 
+    }
+
+    .bio-container .img-container {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 300px;
+    }
+
+    .intro-container {
+        margin: 20px 0;
+        max-width: 90%;
     }
 }
+@media (min-width: 1400px) {
+    .bio-container {
+        justify-content: center;
+    }
 
-@media (max-width: 500px) {
     .bio-container .img-container {
-        min-width: 300px;
-        min-height: 300px;
-        margin-left: 0;
+        margin-left: 2%;
+        margin-right: 2%; 
+    }
+
+    .intro-container {
+        margin: 0 20px;
+        max-width: 700px;
     }
 }
