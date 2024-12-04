@@ -166,12 +166,17 @@ h2 {
     width: 55%;
     padding: 10px;
     list-style: none;
+    gap: 10px;
+
 }
 
 .tech-list li {
-    flex: 1 1 30%;
+    flex: 1 1 10%;
     text-align: center;
     margin: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 18px;
     white-space: nowrap;
 }
 .description-text{
@@ -182,15 +187,6 @@ h2 {
     line-height: 2;
     text-align: justify;
 }
-
-.tech-list li {
-    margin: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.05); 
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 18px;
-}
-
 
 .btn-card {
     margin-top: 20px;
@@ -352,9 +348,29 @@ footer {
 }
 
 
+@media (min-width: 1400px) {
+    .tech-list li {
+        flex: 1 1 20%
+    }
+    .bio-container {
+        justify-content: center;
+    }
 
+    .bio-container .img-container {
+        margin-left: 2%;
+        margin-right: 2%; 
+    }
+
+    .intro-container {
+        margin: 0 20px;
+        max-width: 700px;
+    }
+}
 
 @media (max-width: 768px) {
+    .tech-list li {
+        flex: 1 1 50%
+    }
     .bio-container {
         flex-direction: column; 
         align-items: center; 
@@ -372,18 +388,5 @@ footer {
         max-width: 90%;
     }
 }
-@media (min-width: 1400px) {
-    .bio-container {
-        justify-content: center;
-    }
 
-    .bio-container .img-container {
-        margin-left: 2%;
-        margin-right: 2%; 
-    }
 
-    .intro-container {
-        margin: 0 20px;
-        max-width: 700px;
-    }
-}
